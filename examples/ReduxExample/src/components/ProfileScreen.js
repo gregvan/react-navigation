@@ -1,5 +1,14 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
+
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { NavigationActions } from 'react-navigation';
+
+
+
+
+
 
 const styles = StyleSheet.create({
   container: {
@@ -20,6 +29,11 @@ const ProfileScreen = () => (
     <Text style={styles.welcome}>
       Profile Screen
     </Text>
+    <Button
+      onPress={() =>
+        dispatch(NavigationActions.navigate({ routeName: 'Events' }))}
+      title="Events"
+    />
   </View>
 );
 
