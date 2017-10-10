@@ -32,7 +32,7 @@ const ProfileScreen = () => (
     <Button
       onPress={() =>
         dispatch(NavigationActions.navigate({ routeName: 'Events' }))}
-      title="Events"
+      title="BAD Button Events"
     />
   </View>
 );

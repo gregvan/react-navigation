@@ -3,6 +3,9 @@ import { NavigationActions } from 'react-navigation';
 
 import { AppNavigator } from '../navigators/AppNavigator';
 
+import EventsReducer from './EventsReducer';
+import SelectionReducer from './SelectionReducer';
+
 // Start with two routes: The Main screen, with the Login screen on top.
 const firstAction = AppNavigator.router.getActionForPathAndParams('Main');
 const tempNavState = AppNavigator.router.getStateForAction(firstAction);
@@ -11,6 +14,27 @@ const initialNavState = AppNavigator.router.getStateForAction(
   secondAction,
   tempNavState
 );
+const initialEventsState = AppNavigator.router.getActionForPathAndParams('Events');
+
+function events(state = initialEventsState, action) {
+  let nextState;
+  switch (action.type) {
+    // case 'greg':
+    //   return { ...state, hasEvents: 'lots of them' };
+    case 'select_event':
+      // return the action
+      return action.payload;
+    default:
+      return state;
+  }
+
+  // Simply return the original `state` if `nextState` is null or undefined.
+  return nextState || state;
+}
+
+
+
+
 
 function nav(state = initialNavState, action) {
   let nextState;
@@ -52,6 +76,9 @@ function auth(state = initialAuthState, action) {
 const AppReducer = combineReducers({
   nav,
   auth,
+  // events,
+  EventsReducer,
+  SelectionReducer
 });
 
 export default AppReducer;

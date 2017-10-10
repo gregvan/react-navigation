@@ -29,7 +29,7 @@ const LoginStatusMessage = ({ isLoggedIn, dispatch }) => {
       <Button
         onPress={() =>
           dispatch(NavigationActions.navigate({ routeName: 'Events' }))}
-        title="Events"
+        title="Upcoming Events"
       />
     </View>
   );
