@@ -14,23 +14,23 @@ const initialNavState = AppNavigator.router.getStateForAction(
   secondAction,
   tempNavState
 );
-const initialEventsState = AppNavigator.router.getActionForPathAndParams('Events');
-
-function events(state = initialEventsState, action) {
-  let nextState;
-  switch (action.type) {
-    // case 'greg':
-    //   return { ...state, hasEvents: 'lots of them' };
-    case 'select_event':
-      // return the action
-      return action.payload;
-    default:
-      return state;
-  }
-
-  // Simply return the original `state` if `nextState` is null or undefined.
-  return nextState || state;
-}
+// const initialEventsState = AppNavigator.router.getActionForPathAndParams('Events');
+//
+// function events(state = initialEventsState, action) {
+//   let nextState;
+//   switch (action.type) {
+//     // case 'greg':
+//     //   return { ...state, hasEvents: 'lots of them' };
+//     case 'select_event':
+//       // return the action
+//       return action.payload;
+//     default:
+//       return state;
+//   }
+//
+//   // Simply return the original `state` if `nextState` is null or undefined.
+//   return nextState || state;
+// }
 
 
 
@@ -77,8 +77,8 @@ const AppReducer = combineReducers({
   nav,
   auth,
   // events,
-  EventsReducer,
-  SelectionReducer
+  events: EventsReducer,
+  selectedEventId: SelectionReducer
 });
 
 export default AppReducer;
